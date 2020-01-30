@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /other-name/public/healthcheck                    controllers.HomeController.healthcheck
+GET     /other-name/public/envoy                          controllers.HomeController.envoy(url : String)
+GET     /other-name/public/env                            controllers.HomeController.env
+GET     /other-name/public/db                             controllers.HomeController.db
+GET     /other-name/public/metadata/container             controllers.HomeController.metadataContainer
+GET     /other-name/public/metadata/container/stats       controllers.HomeController.metadataContainerStats
+GET     /other-name/public/metadata/task                  controllers.HomeController.metadataTask
+GET     /other-name/public/metadata/task/stats            controllers.HomeController.metadataTaskStats
+GET     /healthcheck                                            controllers.HomeController.healthcheck
+GET     /                                                       controllers.HomeController.yes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
