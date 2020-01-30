@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /tpl-2020-service/public/healthcheck                    controllers.HomeController.healthcheck
+GET     /tpl-2020-service/public/envoy                          controllers.HomeController.envoy(url : String)
+GET     /tpl-2020-service/public/env                            controllers.HomeController.env
+GET     /tpl-2020-service/public/db                             controllers.HomeController.db
+GET     /tpl-2020-service/public/metadata/container             controllers.HomeController.metadataContainer
+GET     /tpl-2020-service/public/metadata/container/stats       controllers.HomeController.metadataContainerStats
+GET     /tpl-2020-service/public/metadata/task                  controllers.HomeController.metadataTask
+GET     /tpl-2020-service/public/metadata/task/stats            controllers.HomeController.metadataTaskStats
+GET     /healthcheck                                            controllers.HomeController.healthcheck
+GET     /                                                       controllers.HomeController.yes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
